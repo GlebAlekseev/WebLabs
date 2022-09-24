@@ -1,0 +1,79 @@
+
+ul li {
+    border: blue solid 1px;
+    margin-top: 10px;
+    width: 200px;
+    padding: 5px 5px 5px 30px;
+    list-style-type: none;
+}
+
+#p1 li:hover,#p2 li:hover{
+    background-color: green;
+    color: white;
+    border-color: green;
+}
+
+
+#p1 li:hover + li + li{
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+#p2 li:hover ~ li:nth-last-child(n+2) {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+/*  div.hello может не быть прямым родителем*/
+#p3 div.hello p.test{
+    background-color: green;
+}
+
+
+#p4 p.test, .hello{
+    background-color: green;
+}
+
+#p5 p > a, a.test{
+    background-color: green;
+}
+
+#p6 #test b + i{
+    background-color: green;
+}
+/* мб тут не "b", а "i" */
+#p7 li > b{
+    color: red;
+}
+
+#p8 h2.header{
+    color: red;
+}
+#p8 h3.header{
+    color: blue;
+}
+
+#p9 #test h2 ~ p{
+    background-color: green;
+}
+
+#p10 p > * > i {
+    background-color: green;
+}
+
+#p11 p[title*="привет"]{
+    background-color: green;
+}
+
+code {
+    display: block;
+    background-color: gray;
+    color: white;
+}
+
+/*#p1,#p2,#p3,#p4,#p5,#p6,#p7,*/
+/*#p8,#p9,#p10{*/
+/*    display: none;*/
+/*}*/

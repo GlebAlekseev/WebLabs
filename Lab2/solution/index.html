@@ -5,9 +5,327 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Lab 2</title>
 </head>
-<body>
+<body style="margin: 0 10%">
 <a href="./../../index.html">Back to Home</a>
+
+<h1>Лабораторная работа 2</h1>
+<article id="p1">
+    <h2>Задание 1</h2>
+    <p>
+        Повторите страницу по образцу
+        (при наведении курсора мыши на любой элемент списка,
+        текущий элемент окрашивается в зеленый цвет,
+        а элемент через один от него - в красный)
+    </p>
+    <ul>
+        <li>1. пункт li</li>
+        <li>2. пункт li</li>
+        <li>3. пункт li</li>
+        <li>4. пункт li</li>
+        <li>5. пункт li</li>
+        <li>6. пункт li</li>
+        <li>7. пункт li</li>
+        <li>8. пункт li</li>
+        <li>9. пункт li</li>
+        <li>10. пункт li</li>
+    </ul>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            ul li {
+                border: blue solid 1px;
+                margin-top: 10px;
+                width: 200px;
+                padding: 5px 5px 5px 30px;
+                list-style-type: none;
+            }
+
+            #p1 li:hover,#p2 li:hover{
+                background-color: green;
+                color: white;
+                border-color: green;
+            }
+
+
+            #p1 li:hover + li + li{
+                background-color: red;
+                color: white;
+                border-color: red;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+<article id="p2">
+    <h2>Задание 2</h2>
+    <p>
+        Повторите страницу по образцу
+        (при наведении курсора мыши на любой элемент списка,
+        текущий элемент окрашивается в зеленый цвет,
+        а все элементы ниже кроме последнего - в красный)
+    </p>
+    <ul>
+        <li>1. пункт li</li>
+        <li>2. пункт li</li>
+        <li>3. пункт li</li>
+        <li>4. пункт li</li>
+        <li>5. пункт li</li>
+        <li>6. пункт li</li>
+        <li>7. пункт li</li>
+        <li>8. пункт li</li>
+        <li>9. пункт li</li>
+        <li>10. пункт li</li>
+    </ul>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p2 li:hover ~ li:nth-last-child(n+2) {
+                background-color: red;
+                color: white;
+                border-color: red;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p3">
+    <h2>Задание 3</h2>
+    <p>
+        Сделайте селектор, который выберет все абзацы p
+        с классом test из дивов div с классом hello.
+    </p>
+    <div>
+        <p class="test">test div p 1</p>
+        <p>div p 2</p>
+        <p class="test">test div p 3</p>
+        <p class="test">test div p 4</p>
+    </div>
+    <div class="hello">
+        <p class="test">hello test div p 1</p>
+        <p>hello div p 2</p>
+        <p class="test">hello test div p 3</p>
+        <p class="test">hello test div p 4</p>
+    </div>
+    <section class="hello">
+        <p class="test">hello test section p 1</p>
+        <p>hello section p 2</p>
+        <p class="test">hello test section p 3</p>
+        <p class="test">hello test section p 4</p>
+        <span class="test">hello test section span 5</span>
+    </section>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p3 div.hello p.test{
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+<article id="p4">
+    <h2>Задание 4</h2>
+    <p>
+        Сделайте селектор,
+        который выберет все абзацы p с классом test
+        и одновременно все элементы с классом hello.
+    </p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p4 p.test, .hello{
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p5">
+    <h2>Задание 5</h2>
+    <p>
+        Сделайте селектор, который выберет все a,
+        что лежат непосредственно внутри p
+        и одновременно все a с классом test.
+    </p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p5 p > a, a.test{
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p6">
+    <h2>Задание 6</h2>
+    <p>
+        Сделайте селектор, который выберет все i,
+        что лежат непосредственно после b из элемента
+        с id=test.
+    </p>
+    <p id="test">
+        <b>test</b> test <i>это выберет</i> test <b>это не выберет</b>
+    </p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p6 #test b + i{
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p7">
+    <h2>Задание 7</h2>
+    <p>
+        Дан следующий код:
+    </p>
+    <ul>
+        <li>
+            <i>курсив</i>
+            <b>жирный</b>
+            <b><i>жирный курсив</i></b>
+        </li>
+        <li>
+            <i>курсив</i>
+            <b>жирный</b>
+            <b><i>жирный курсив</i></b>
+        </li>
+    </ul>
+    <p>
+        Покрасьте в красный цвет только те теги b,
+        которые являются непосредственными потомками тегов li.
+    </p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p7 li > b{
+                color: red;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p8">
+    <h2>Задание 8</h2>
+    <p>
+        Дан следующий код:
+    </p>
+    <h2 class="header">заголовок</h2>
+    <h2 class="header">заголовок</h2>
+    <h3 class="header">заголовок</h3>
+    <h3 class="header">заголовок</h3>
+    <p>
+        Покрасьте все h2 с классом header в красный цвет,
+        а все h3 с этим классом - в синий.
+    </p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p8 h2.header{
+                color: red;
+            }
+            #p8 h3.header{
+                color: blue;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p9">
+    <h2>Задание 9</h2>
+    <p>
+        Сделайте селектор, который выберет все абзацы p
+        идущие после h2 из элемента с id=test.
+    </p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p9 #test h2 ~ p{
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p10">
+    <h2>Задание 10</h2>
+    <p>
+        Сделайте селектор, который выберет все i,
+        лежащие внутри любых элементов, лежащих внутри абзаца p.
+    </p>
+    <p>
+        Пример HTML для проверки:
+    </p>
+    <p><span><i>выберет</i></span></p>
+    <p><b><i>выберет</i></b></p>
+    <p><i>не выберет</i></p>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p10 p > * > i {
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
+<article id="p11">
+    <h2>Задание 11</h2>
+    <p>
+        Сделайте селектор,
+        который выберет все абзацы p с атрибутом title,
+        в значении которого есть слово 'привет'.
+    </p>
+    <p>без title</p>
+    <p title="_ привет мир">_ привет мир</p>
+    <p title="нет">нет</p>
+    <a href="#" title="привет мир">привет мир</a>
+    <section>
+        <p>Решение</p>
+        <pre>
+        <code>
+            #p11 p[title*="привет"]{
+                background-color: green;
+            }
+        </code>
+        </pre>
+    </section>
+    <hr>
+</article>
+
 </body>
 </html>
