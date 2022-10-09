@@ -5,9 +5,126 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Lab 6</title>
 </head>
 <body>
-<a href="./../../index.html">Back to Home</a>
+<div class="main-wrapper">
+    <header>
+        <a href="./../../index.html">На главную</a>
+    </header>
+    <main>
+        <input type="radio" name="category" id="c-all" checked>
+        <input type="radio" name="category" id="c-yellow">
+        <input type="radio" name="category" id="c-green">
+        <input type="radio" name="category" id="c-brown">
+        <input type="radio" name="category" id="c-purple">
+        <section class="category">
+            <label for="c-all">Все</label>
+            <label for="c-yellow">Желтое</label>
+            <label for="c-green">Зеленое</label>
+            <label for="c-brown">Коричневое</label>
+            <label for="c-purple">Фиолетовое</label>
+        </section>
+        <section class="items">
+            <div class="green">
+                <p>Плашка с описанием 1</p>
+                <img src="images/sweet_pepper.jpg" alt="">
+            </div>
+            <div class="yellow">
+                <p>Плашка с описанием 2</p>
+                <img src="images/parsnip.jpg" alt="">
+            </div>
+            <div class="yellow">
+                <p>Плашка с описанием</p>
+                <img src="images/carrot.jpg" alt="">
+            </div>
+            <div class="yellow">
+                <p>Плашка с описанием</p>
+                <img src="images/onion.jpg" alt="">
+            </div>
+            <div class="purple">
+                <p>Плашка с описанием</p>
+                <img src="images/cabbage_scotch.jpg" alt="">
+            </div>
+            <div class="green">
+                <p>Плашка с описанием</p>
+                <img src="images/kohlrabi.jpg" alt="">
+            </div>
+            <div class="yellow">
+                <p>Плашка с описанием</p>
+                <img src="images/aubergine.jpg" alt="">
+            </div>
+            <div class="yellow">
+                <p>Плашка с описанием</p>
+                <img src="images/sauerkraut-benefits-spoon.jpg" alt="">
+            </div>
+            <div class="green">
+                <p>Плашка с описанием</p>
+                <img src="images/kale-benefits.jpg" alt="">
+            </div>
+            <div class="green">
+                <p>Плашка с описанием</p>
+                <img src="images/broccoli.jpg" alt="">
+            </div>
+            <div class="green">
+                <p>Плашка с описанием</p>
+                <img src="images/cabbage.jpg" alt="">
+            </div>
+            <div class="brown">
+                <p>Плашка с описанием</p>
+                <img src="images/caper.jpg" alt="">
+            </div>
+            <div class="green">
+                <p>Плашка с описанием</p>
+                <img src="images/marrow.jpg" alt="">
+            </div>
+            <div class="yellow">
+                <p>Плашка с описанием</p>
+                <img src="images/daikon.jpg" alt="">
+            </div>
+            <div class="brown">
+                <p>Плашка с описанием</p>
+                <img src="images/swede.jpg" alt="">
+            </div>
+            <div class="green">
+                <p>Плашка с описанием</p>
+                <img src="images/okra.jpg" alt="">
+            </div>
+        </section>
+        <section class="rating">
+            <div class="rating-wrapper">
+                <h1>Рейтинг</h1>
+                <input type="checkbox" id="desc">
+                <label for="desc">По убыванию</label>
+                <div class="rating-list">
+                    <input type="text" value="2" readonly>
+                    <div class="rating-item">
+                        <span>Желтое</span>
+                        <div class="scale"></div>
+                    </div>
+                    <input type="text" value="8" readonly>
+                    <div class="rating-item">
+                        <span>Зеленое</span>
+                        <div class="scale"></div>
+                    </div>
+                    <input type="text" value="5" readonly>
+                    <div class="rating-item">
+                        <span>Коричневое</span>
+                        <div class="scale"></div>
+                    </div>
+                    <input type="text" value="1" readonly>
+                    <div class="rating-item">
+                        <span>Фиолетовое</span>
+                        <div class="scale"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <hr>
+    </footer>
+</div>
 </body>
 </html>
