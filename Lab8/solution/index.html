@@ -53,11 +53,11 @@
         if (isIntegers(hour,minute,offset) && checkHour(hour) && checkMinute(minute)
             && offset >=0){
             // hourOffset = offset.
-            hourOffset = Math.floor(((offset/60)%24))
-            minuteOffset = offset%60
+            let hourOffset = Math.floor(((offset/60)%24))
+            let minuteOffset = offset%60
 
-            newHour = hour + hourOffset
-            newMinute = minute + minuteOffset
+            let newHour = hour + hourOffset
+            let newMinute = minute + minuteOffset
             if (newMinute>59) newHour++
 
             newHour %= 24
