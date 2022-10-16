@@ -8,6 +8,101 @@
     <title>Lab 10</title>
 </head>
 <body>
-<a href="./../../index.html">Back to Home</a>
+<a href="./../../index.html">На главную</a>
+<script>
+    var time = DateTime('2017-05-16 13:45')
+        .add(24,'hours')
+        .subtract(1,'months')
+        .add(3,'days')
+        .add(15,'minutes')
+    console.info(time.value)
+
+
+    function DateTime(value){
+        let [YYYY,MM,DD,HH,SS] = getValuesFromDateString(value)
+        let date = new Date(YYYY,MM,DD,HH,SS)
+        let result =  {
+            value: "",
+            add: function (value,unit){
+                checkValueAndUnit(value,unit)
+                switch (unit){
+                    case "years":
+                        date.setFullYear(date.getFullYear()+value)
+                        break
+                    case "months":
+                        date.setMonth(date.getMonth()+value)
+                        break
+                    case "days":
+                        date.setDate(date.getDate()+value)
+                        break
+                    case "hours":
+                        date.setHours(date.getHours()+value)
+                        break
+                    case "minutes":
+                        date.setMinutes(date.getMinutes()+value)
+                        break
+                }
+                updateValueResult()
+                return this
+            },
+            subtract: function (value,unit){
+                checkValueAndUnit(value,unit)
+                switch (unit){
+                    case "years":
+                        date.setFullYear(date.getFullYear()-value)
+                        break
+                    case "months":
+                        date.setMonth(date.getMonth()-value)
+                        break
+                    case "days":
+                        date.setDate(date.getDate()-value)
+                        break
+                    case "hours":
+                        date.setHours(date.getHours()-value)
+                        break
+                    case "minutes":
+                        date.setMinutes(date.getMinutes()-value)
+                        break
+                }
+                updateValueResult()
+                return this
+            }
+        }
+        updateValueResult()
+        return result
+        function getValuesFromDateString(text){
+            let dateArray = text.split(" ")
+            let [YYYY,MM,DD] = dateArray[0].split("-")
+            let [HH,SS] = dateArray[1].split(":")
+            return [YYYY,MM,DD,HH,SS]
+        }
+        function getValuesFromDate(date){
+            with(date){
+                return [getFullYear(),getMonth(),getDate(),getHours(),getMinutes()]
+            }
+        }
+
+        function checkValueAndUnit(value,unit) {
+            if (value < 0 || isUnknownUnit(unit)) {
+                throw TypeError
+            }
+
+            function isUnknownUnit(unit) {
+                let units = ["years", "months", "days", "hours", "minutes"]
+                let result = true
+                units.forEach(item => {
+                    if (item === unit) {
+                        result = false
+                    }
+                })
+                return result
+            }
+        }
+        function updateValueResult(){
+            let [YYYY,MM,DD,HH,SS] = getValuesFromDate(date).map(item=>item.toString())
+            result.value = `${YYYY}-${MM.padStart(2,"0")}-${DD.padStart(2,"0")} ${HH.padStart(2,"0")}:${SS.padStart(2,"0")}`
+        }
+    }
+</script>
 </body>
 </html>
